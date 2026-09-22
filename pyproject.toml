@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "towed-adcp-pipeline"
+version = "0.1.0"
+description = "Bronze, silver, gold and platinum matrices from underway, bottom-tracking ADCP data (Valle-Levinson, 2024)"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [{name = "Liesvy Valladares", email = "liesvyvallmx@gmail.com"}]
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "pandas", "matplotlib", "cmocean", "pyyaml"]
+
+[project.optional-dependencies]
+maps = ["geopandas", "shapely"]
+
+[tool.setuptools]
+packages = ["towed_adcp"]

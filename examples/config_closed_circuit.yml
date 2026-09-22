@@ -1,0 +1,52 @@
+# Closed circuit repeated many times over a tidal cycle (a figure-eight loop through the mouth of a
+# small estuary, ~50 laps in 25 h), split into six transects between the six turning points.
+# Paths are relative to this file. The data folder is not part of the repository.
+
+name: closed_circuit
+files: "../data/circuit/*_ASC.TXT"          # WinRiver classic ASCII files (list or glob pattern)
+output: ../output/closed_circuit
+coast: ../data/circuit/coast.shp            # optional coastline shapefile for the maps
+figures: true
+
+bronze:
+  err_max: 10        # |error velocity| < 10 cm/s
+  q_max: 100         # |discharge| < 100
+  vbt_min: 10        # bottom-track speed > 10 cm/s (idle or drifting profiles are dropped)
+  pg_min: null       # percent good; null = not used (some exports report 0 in every bin)
+
+repetitions:
+  method: vertices   # "vertices": detect from the track; "file": read the times from a file
+  # turning points of the circuit (lon, lat); take the median position of each turn over all laps
+  vertices:
+    SW: [-116.62278, 31.76041]
+    SE: [-116.62034, 31.76074]
+    NW: [-116.62124, 31.76778]
+    NE: [-116.61951, 31.76699]
+    CW: [-116.62245, 31.76505]
+    CE: [-116.62008, 31.76436]
+  # transects [start vertex, end vertex] in sailing order; the first one marks the start of each lap
+  transects:
+    South: [SW, SE]
+    South_North: [SE, NW]
+    North: [NW, NE]
+    North_Center: [NE, CW]
+    Center: [CW, CE]
+    Center_South: [CE, SW]
+  r_detect: 120      # m: radius to count a pass by the lap-start vertex
+  min_sep: 120       # profiles: minimum separation between passes (120 x 5 s = 10 min)
+  r_max: 100         # m: maximum distance to both vertices to accept a repetition
+  dur_max_min: 20    # min: maximum duration of a repetition
+  gap_max_s: 60      # s: maximum gap between profiles (file changes)
+
+gold:
+  dy: 10             # m, at least dt x ship speed (5 s x 1.8 m/s)
+  dz: 0.25           # m, at least the bin size (0.2 m)
+  z_min: 0.5
+  z_max: 7.0
+
+platinum:
+  periods_h: {D1: 23.93, D2: 12.42, D4: 6.21}   # harmonic bands (hours)
+  n_min: 25          # minimum values per node to fit (null = half the number of repetitions)
+
+rotate:
+  method: principal_axis   # channel axis = principal axis of the current; or "heading" with heading_deg

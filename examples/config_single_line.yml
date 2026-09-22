@@ -1,0 +1,32 @@
+# One straight transect repeated back and forth, with the start and end time of every repetition
+# read from a file. This is the layout of the example that comes with the chapter (one ASCII file
+# plus timtran1.mat). Times in the file use the same unit as the bronze matrix: decimal day of the
+# month.
+
+name: single_line
+files: ["../data/line/transect.000"]
+output: ../output/single_line
+figures: true
+
+bronze:
+  err_max: 10
+  q_max: 100
+  vbt_min: 10
+  pg_min: 70          # percent good is available in this export
+
+repetitions:
+  method: file
+  file: ../data/line/timtran.mat   # .mat (vector alternating start, end), .txt with 1 or 2 columns, or .csv with transect,t_start,t_end
+  transects:
+    line: {origin: [-81.464213, 30.381814]}   # transect origin (lon, lat) as in gold.m: distance to the origin
+
+gold:
+  dy: 50             # m
+  dz: 0.5            # m, 0.5-m bins
+  z_min: 1.5
+  z_max: 15.0
+  L: 800             # grid length (m) for "origin" transects
+
+platinum:
+  periods_h: {D2: 12.42, D4: 6.21}
+  n_min: 9

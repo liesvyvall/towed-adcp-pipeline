@@ -1,0 +1,25 @@
+# data and outputs never go into the repository
+data/
+salidas*/
+output*/
+*.npz
+*.npy
+*.mat
+*.000
+*ASC.TXT
+*.png
+*.pdf
+*.mp4
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+# python / jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+.DS_Store

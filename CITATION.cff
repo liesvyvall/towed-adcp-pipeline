@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, together with the chapter by Valle-Levinson (2024) that describes the method."
+title: "towed-adcp-pipeline: bronze, silver, gold and platinum matrices from underway, bottom-tracking ADCP data"
+type: software
+authors:
+  - family-names: Valladares-Alfonso
+    given-names: Liesvy
+    email: liesvyvallmx@gmail.com
+version: 0.1.0
+date-released: 2026-09-21
+license: MIT
+repository-code: https://github.com/liesvyvall/towed-adcp-pipeline
+references:
+  - type: book
+    title: "Collection and processing of underway, bottom-tracking ADCP data"
+    authors:
+      - family-names: Valle-Levinson
+        given-names: Arnoldo
+    year: 2024
+    collection-title: "Treatise on Estuarine and Coastal Science, 2nd Edition"
+    volume: 2
+    start: 207
+    end: 218
+    publisher:
+      name: Elsevier
+    doi: 10.1016/B978-0-323-90798-9.00023-8
