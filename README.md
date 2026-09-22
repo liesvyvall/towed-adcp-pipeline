@@ -215,13 +215,17 @@ Willmott, C. J. (1981). On the validation of models. *Physical Geography*, 2, 18
 
 ## How to cite
 
-If this code is useful in your work, please cite it together with the chapter that describes the
-method:
+If this code is useful in your work, please cite both the software and the chapter that describes
+the method:
 
 > Valladares, L. (2026). towed-adcp-pipeline: bronze, silver, gold and platinum matrices from
 > underway, bottom-tracking ADCP data (version 0.1.0). https://github.com/liesvyvall/towed-adcp-pipeline
 
-A `CITATION.cff` file is included for reference managers.
+> Valle-Levinson, A. (2024). Collection and processing of underway, bottom-tracking ADCP data. In:
+> Baird, D. and Elliott, M. (eds.), *Treatise on Estuarine and Coastal Science*, 2nd edition, vol. 2,
+> pp. 207–218. Elsevier. https://doi.org/10.1016/B978-0-323-90798-9.00023-8
+
+A `CITATION.cff` file with both entries is included for reference managers.
 
 ## License
 
