@@ -4,10 +4,11 @@ Processing of underway, bottom-tracking ADCP data collected from a moving boat: 
 exported by WinRiver to gridded fields of tidal and residual flow. The code follows the sequence of
 matrices described by Valle-Levinson (2024): **bronze**, **silver**, **gold** and **platinum**.
 
-The chapter provides Matlab scripts for a single straight transect. This package does the same
-thing in Python and adds two things I needed for my own surveys: a way to split a closed circuit
-that is sailed over and over into several transects, and a rotation of the results to the channel
-axis.
+The chapter provides Matlab scripts (`bronze.m`, `silver.m`, `gold.m`, `platinum.m`, `lsqfit.m`) and
+an example data set for a single straight transect; they are distributed as supplementary material
+of the chapter on the publisher's page (Appendix A). This package does the same thing in Python and
+adds two things I needed for my own surveys: a way to split a closed circuit that is sailed over and
+over into several transects, and a rotation of the results to the channel axis.
 
 ## What it does
 
